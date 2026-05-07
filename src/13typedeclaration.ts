@@ -27,9 +27,9 @@ const fetchData = async ()=>{
         const response:AxiosResponse<GitHubUser>  = await axios.get("https://api.github.com/users/parthpandya-qt");
         const userData = response.data;
         console.log("User Data:", userData);
-    }catch(err)
+    }catch(err : any)
     {
-        if (err instanceof Error) {
+        if (axios.isAxiosError(err)) {
             console.error("Error fetching data:", err.message);
         } else {
             console.error("An unknown error occurred.");
