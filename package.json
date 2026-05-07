@@ -3,14 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type":"module",
   "scripts": {
-    "start":"node dist/greet.js",
-    "dev":"npx tsc"
+    "start": "node dist/greet.js",
+    "dev": "npx tsc"
+    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.16.0",
     "typescript": "^6.0.3"
   }
 }

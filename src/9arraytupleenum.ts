@@ -41,16 +41,45 @@ const chaiItem:[name:string, price:number] = ["Masala Chai", 2.5];
 //-------------------Enum-------------------------------------------------------------------------------------------
 
 enum cupSize {
-    Small = "small",
-    Medium = "medium",
-    Large = "large"
+    SMALL = "small",
+    MED = "medium",
+    LARGE = "large"
 }
 
-const size = cupSize.Medium; 
+const size = cupSize.MED; 
 
 enum Status{
 
-    Pending = 100,
-    InProgress, //auto assign 101
-    Completed // auto assign 102
+    PENDING = 100,
+    INPROGRESS, //auto assign 101
+    COMPLETE // auto assign 102
 }
+//--------------------------------------
+enum ChaiType{
+    MASALA = "masala",
+    GINGER = "ginger",
+    CARDAMOM = "cardamom"
+}
+
+function makeChai(type: ChaiType){
+    console.log(`Making a ${type} chai.`);
+}
+makeChai(ChaiType.MASALA);
+//--------------------------------------
+//you can make enum constants
+
+const enum Direction{
+    NORTH=3,
+    SOUTH=4,
+    EAST=5,
+    WEST=6
+}
+const s = Direction.SOUTH; // This will be replaced with the value 4 during compilation, and no additional code will be generated for the enum itself.
+
+//--------------------------------------
+//you can push the value in enum
+
+let name : [string] = ["Parth"];
+name.push("Rohit"); // This is valid because the tuple allows for additional elements to be added, but it will not enforce the type of those elements. However, it is generally not recommended to push values into a tuple as it can lead to unexpected behavior and type inconsistencies.
+
+export {};
